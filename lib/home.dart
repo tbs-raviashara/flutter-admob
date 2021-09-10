@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
             )
           : null,
       appBar: AppBar(
-        title: Text('Load Bottom AdMob Banner'),
+        title: Text('AdMob With gPay'),
         centerTitle: true,
       ),
       body: Container(
