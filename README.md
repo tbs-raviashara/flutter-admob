@@ -11,6 +11,10 @@ git clone https://github.com/tbs-raviashara/flutter-admob.git
 flutter run
 ```
 
+## Screenshots
+
+<img src="ss.png"/>
+
 ### How to use
 
 ```
