@@ -1,6 +1,7 @@
 import 'package:admob_demo/app_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:pay/pay.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late BannerAd bottomBannerAd;
   bool isBottomBannerAdLoaded = false;
-
+  final paymentItems = <PaymentItem>[];
   void createBottomBannerAd() {
     bottomBannerAd = BannerAd(
         size: AdSize.banner,
@@ -31,6 +32,10 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
+    paymentItems.add(PaymentItem(
+        amount: '200',
+        label: "Product1",
+        status: PaymentItemStatus.final_price));
     createBottomBannerAd();
   }
 
@@ -56,7 +61,17 @@ class _HomeState extends State<Home> {
       ),
       body: Container(
         child: Center(
-          child: Text('Body'),
+          child: GooglePayButton(
+            paymentConfigurationAsset: 'gpay.json',
+            paymentItems: paymentItems,
+            onPaymentResult: (data) {
+              print(data);
+            },
+            width: 150.0,
+            height: 60.0,
+            style: GooglePayButtonStyle.white,
+            type: GooglePayButtonType.pay
+          ),
         ),
       ),
     );
