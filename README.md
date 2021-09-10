@@ -1,5 +1,12 @@
 # Flutter AdMob Demo
 
+## Install
+
+- [Flutter](https://flutter.dev/docs/get-started/install/windows)
+
+- [Editor](https://flutter.dev/docs/get-started/editor)
+
+- [Test drive](https://flutter.dev/docs/get-started/test-drive?tab=androidstudio)
 ## Clone Project
 
 ```
